@@ -1,13 +1,22 @@
 // require("dotenv").config();
 // var keys = require("./keys.js");
 // var spotify = new Spotify(keys.spotify);
-
+var src = "https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js";
 var fs = require("fs");
+var movieName;
+var artistName;
+var movieNameArr = [];
+var artistNameArr = [];
 // Axios package
 var axios = require("axios");
 // Getting movie name from user in 4th argument
 if(process.argv[2] === "movie-this"){
-var movieName = process.argv[3];
+// Storing user inputs to Movie Name array
+for(var i=3; i<process.argv.length; i++){
+    movieNameArr.push(process.argv[i]);
+    movieName = movieNameArr.join(" ");
+}
+// console.log("Name of the movie : " + movieName);
 if(movieName){
     var queryUrlMovie = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
     }
@@ -59,9 +68,13 @@ if(movieName){
           });
     
 }
-// Getting band/artist name from user in 4th argument
+// Getting band/artist name from user in 3rd argument
 if(process.argv[2] === "concert-this"){
-    var artistName = process.argv[3];
+    // Storing user inputs to artist Name array
+    for(var i=3; i<process.argv.length; i++){
+        artistNameArr.push(process.argv[i]);
+        artistName = artistNameArr.join(" ");
+    }
     // If user entered a value then use below URL
     if(artistName){
     var queryUrlConcert = "https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp";
@@ -72,7 +85,8 @@ if(process.argv[2] === "concert-this"){
             console.log("Venue : " + response.data[0].venue.name);
             console.log("Venue Location : " + response.data[0].venue.city + "\n\t\t" + response.data[0].venue.latitude + "," + response.data[0].venue.longitude);
             console.log("Venue : " + response.data[0].datetime);
-            // moment
+            // var formattedTime = response.data[0].datetime.moment().format("MM/DD/YYYY");
+            // console.log("Formated Time : " + formattedTime);
             
         });
     }
@@ -81,9 +95,14 @@ else{
 }
 }
 
-
-   
-
+// Getting song name from user in 3rd argument
+if(process.argv[2] === "spitify-this-song"){
+    // Storing user inputs to artist Name array
+    for(var i=3; i<process.argv.length; i++){
+        artistNameArr.push(process.argv[i]);
+        artistName = artistNameArr.join(" ");
+    }
+}
 
     //   Function that appends data to text file
     function appendToFile(value){
