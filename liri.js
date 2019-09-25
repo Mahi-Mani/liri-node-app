@@ -31,9 +31,7 @@ const spotifyApi = new SpotifyWebApi({
       console.log('Something went wrong when retrieving an access token', err.message);
     });
 
-
-var src = "https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js";
-var fs = require("fs");
+// Variable declarations
 var movieName;
 var artistName;
 var songName;
