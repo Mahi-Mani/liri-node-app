@@ -143,3 +143,49 @@ Belgium, Germany, Canada, France, USA, UK
 English, Mohawk
 A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
 Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+Star Wars: Episode IV - A New Hope
+1977
+8.6
+8.6
+USA
+English
+Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.
+Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing
+Star Wars: Episode IV - A New Hope
+1977
+8.6
+8.6
+USA
+English
+Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.
+Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing
+************************************************************
+Spider Man
+1978–1979
+6.2
+6.2
+Japan, USA
+Japanese
+To fight against the evil Iron Cross Army, led by the space emperor Professor Monster, a daredevil motorcyclist transforms into the famous Marvel Superhero, with a racecar and giant ...
+Shinji Tôdô, Mitsuo Andô, Yukie Kagawa, Hirofumi Koga
+************************************************************
+Spider Man,1978–1979,6.2,6.2,Japan, USA,Japanese,To fight against the evil Iron Cross Army, led by the space emperor Professor Monster, a daredevil motorcyclist transforms into the famous Marvel Superhero, with a racecar and giant ...,Shinji Tôdô, Mitsuo Andô, Yukie Kagawa, Hirofumi Koga,************************************************************
+***********************CONCERT DETAILS*************************************
+Gateway City Arts
+Holyoke
+		42.203913,-72.60395900000003
+2019-09-24T20:00:00
+*************************MOVIE DETAILS***********************************
+Spider Man
+1978–1979
+6.2
+6.2
+Japan, USA
+Japanese
+To fight against the evil Iron Cross Army, led by the space emperor Professor Monster, a daredevil motorcyclist transforms into the famous Marvel Superhero, with a racecar and giant ...
+Shinji Tôdô, Mitsuo Andô, Yukie Kagawa, Hirofumi Koga
+*************************SONG DETAILS***********************************
+beerbongs & bentleys
+Post Malone
+Over Now
+https://open.spotify.com/track/09IOPhEh1OMe0HD9b36FJk

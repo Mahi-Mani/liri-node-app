@@ -1,12 +1,38 @@
 // require("dotenv").config();
 // var keys = require("./keys.js");
 // var spotify = new Spotify(keys.spotify);
+// var Spotify = require('node-spotify-api');
+var SpotifyWebApi = require('spotify-web-api-node');
+
+const spotifyApi = new SpotifyWebApi({
+    clientId: '7134a257fe4647d790e880e5b34382c2',
+    clientSecret: '1a131a78fa4247fea31b6cc5e905d3d6',
+    redirectUri: 'http://www.example.com/callback',
+  });
+  
+  // Set an access token.
+  // This is required as Spotify implemented a new auth flow since May 2017.
+  // See https://developer.spotify.com/news-stories/2017/01/27/removing-unauthenticated-calls-to-the-web-api/
+  spotifyApi.clientCredentialsGrant()
+    .then(function(data) {
+    //   console.log('The access token expires in ' + data.body['expires_in']);
+    //   console.log('The access token is ' + data.body['access_token']);
+  
+      // Save the access token so that it's used in future calls
+      spotifyApi.setAccessToken(data.body['access_token']);
+    }, function(err) {
+      console.log('Something went wrong when retrieving an access token', err.message);
+    });
+
+
 var src = "https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js";
 var fs = require("fs");
 var movieName;
 var artistName;
+var songName;
 var movieNameArr = [];
 var artistNameArr = [];
+var songNameArr = [];
 // Axios package
 var axios = require("axios");
 // Getting movie name from user in 4th argument
@@ -27,23 +53,28 @@ if(movieName){
 
     axios.get(queryUrlMovie).then(
         function(response) {
+                var appendMovieArr = [];
+                appendMovieArr.push("*************************MOVIE DETAILS***********************************");
                 // Response from query URL is recorded to console.log
             console.log("Title of the movie : " + response.data.Title);
-            appendToFile(response.data.Title);
+            // Pushing console logged data to an empty array
+            appendMovieArr.push(response.data.Title);
             console.log("Release Year : " + response.data.Year);
-            appendToFile(response.data.Year);
+            appendMovieArr.push(response.data.Year);
             console.log("Imdb Rating : " + response.data.imdbRating);
-            appendToFile(response.data.imdbRating);
+            appendMovieArr.push(response.data.imdbRating);
             console.log("Rotten Tomatoes Rating of the movie : " + response.data.imdbRating);
-            appendToFile(response.data.imdbRating);
+            appendMovieArr.push(response.data.imdbRating);
             console.log("Country where the movie was produced : " + response.data.Country);
-            appendToFile(response.data.Country);
+            appendMovieArr.push(response.data.Country);
             console.log("Language of the movie : " + response.data.Language);
-            appendToFile(response.data.Language);
+            appendMovieArr.push(response.data.Language);
             console.log("Plot of the movie : " + response.data.Plot);
-            appendToFile(response.data.Plot);
+            appendMovieArr.push(response.data.Plot);
             console.log("Actors in the movie : " + response.data.Actors);
-            appendToFile(response.data.Actors);
+            appendMovieArr.push(response.data.Actors);
+            // Appending the array to log.txt
+            appendToFile(appendMovieArr.join("\n"));
     
             
         }).catch(function(error) {
@@ -80,13 +111,23 @@ if(process.argv[2] === "concert-this"){
     var queryUrlConcert = "https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp";
     axios.get(queryUrlConcert).then(
         function(response) {
+                var appendConcertArr = [];
+                appendConcertArr.push("***********************CONCERT DETAILS*************************************");
                 // Response from query URL is recorded to console.log
             // console.log(response.data.venue.name);
             console.log("Venue : " + response.data[0].venue.name);
+            // Pushing console.log contents to an empty Array
+            appendConcertArr.push(response.data[0].venue.name);
             console.log("Venue Location : " + response.data[0].venue.city + "\n\t\t" + response.data[0].venue.latitude + "," + response.data[0].venue.longitude);
+            appendConcertArr.push(response.data[0].venue.city + "\n\t\t" + response.data[0].venue.latitude + "," + response.data[0].venue.longitude);
             console.log("Venue : " + response.data[0].datetime);
+            appendConcertArr.push(response.data[0].datetime);
             // var formattedTime = response.data[0].datetime.moment().format("MM/DD/YYYY");
             // console.log("Formated Time : " + formattedTime);
+    
+            // Appending the array to log.txt
+            appendToFile(appendConcertArr.join("\n"));
+
             
         });
     }
@@ -96,21 +137,64 @@ else{
 }
 
 // Getting song name from user in 3rd argument
-if(process.argv[2] === "spitify-this-song"){
+if(process.argv[2] === "spotify-this-song"){ 
+
     // Storing user inputs to artist Name array
     for(var i=3; i<process.argv.length; i++){
-        artistNameArr.push(process.argv[i]);
-        artistName = artistNameArr.join(" ");
+        songNameArr.push(process.argv[i]);
+        songName = songNameArr.join(" ");
     }
+    spotifyApi.setAccessToken('BQAFpvhMmGiZSRcPyTABKMC-qKqiq_pz014lgt_Z7kps9DOVmwj-0QGjrG51lfG9q6NDD4n5bqHFcc_ejEU');
+
+    // If song name was given by user, then display below details
+    if(songName){
+    spotifyApi.searchTracks(songName)
+    .then(function(data) {
+        var appendSongArr = [];
+        appendSongArr.push("*************************SONG DETAILS***********************************");
+        console.log("Name of Album : ", data.body.tracks.items[0].album.name);
+        appendSongArr.push(data.body.tracks.items[0].album.name);
+        console.log("Name of Artist : ", data.body.tracks.items[0].album.artists[0].name);
+        appendSongArr.push(data.body.tracks.items[0].album.artists[0].name);
+        console.log("Name of Song : ", data.body.tracks.items[0].name);
+        appendSongArr.push(data.body.tracks.items[0].name);
+        console.log("Preview Link : ", data.body.tracks.items[0].external_urls.spotify);
+        appendSongArr.push(data.body.tracks.items[0].external_urls.spotify);
+        appendToFile(appendSongArr.join("\n"));
+    }, function(err) {
+        console.error(err);
+    });
+}
+// If song name was not given by user then give default value ""The Sign" by Ace of Base.""
+else{
+    songName = "The Sign by Ace of Base";
+    spotifyApi.searchTracks(songName)
+    .then(function(data) {
+        var appendSongArr = [];
+        appendSongArr.push("*************************SONG DETAILS***********************************");
+        console.log("Name of Album : ", data.body.tracks.items[0].album.name);
+        appendSongArr.push(data.body.tracks.items[0].album.name);
+        console.log("Name of Artist : ", data.body.tracks.items[0].album.artists[0].name);
+        appendSongArr.push(data.body.tracks.items[0].album.artists[0].name);
+        console.log("Name of Song : ", data.body.tracks.items[0].name);
+        appendSongArr.push(data.body.tracks.items[0].name);
+        console.log("Preview Link : ", data.body.tracks.items[0].external_urls.spotify);
+        appendSongArr.push(data.body.tracks.items[0].external_urls.spotify);
+        appendToFile(appendSongArr.join("\n"));
+    }, function(err) {
+        console.error(err);
+    });
+
 }
 
+}
     //   Function that appends data to text file
     function appendToFile(value){
     fs.appendFile("log.txt","\n"+value,function(err){
         if(err){
             console.log(err);
         }
-        console.log("Appended movie details to Log.txt Successfully");
+        console.log("Appended details to Log.txt Successfully");
     });
 }
 
