@@ -3,6 +3,8 @@
 // var spotify = new Spotify(keys.spotify);
 // var Spotify = require('node-spotify-api');
 var SpotifyWebApi = require('spotify-web-api-node');
+// File System
+var fs = require("fs");
 
 const spotifyApi = new SpotifyWebApi({
     clientId: '7134a257fe4647d790e880e5b34382c2',
@@ -48,6 +50,7 @@ if(movieName){
     }
     // If user did not enter any value then give information about Mr. Nobody
     else if((!movieName) && (process.argv[2] === "movie-this")){
+        console.log("Since you have not entered a movie name, we give you details about Mr. Nobody!");
         queryUrlMovie = "http://www.omdbapi.com/?t=Mr.Nobody&y=&plot=short&apikey=trilogy";
     }
 
@@ -144,7 +147,7 @@ if(process.argv[2] === "spotify-this-song"){
         songNameArr.push(process.argv[i]);
         songName = songNameArr.join(" ");
     }
-    spotifyApi.setAccessToken('BQAFpvhMmGiZSRcPyTABKMC-qKqiq_pz014lgt_Z7kps9DOVmwj-0QGjrG51lfG9q6NDD4n5bqHFcc_ejEU');
+    spotifyApi.setAccessToken('BQAmvy3Rnp9JgGWC0lPs9Ezk07P-kuNt6lRQ_2vWli4zStbqTXibC8mp2ir28ZI4UMU3sgDVRD_-vQnB_zY');
 
     // If song name was given by user, then display below details
     if(songName){
@@ -186,8 +189,13 @@ else{
     });
 
 }
-
 }
+
+// Getting song name from user in 3rd argument
+if(process.argv[2] === "do-what-it-says"){ 
+    // Using filesystem read file
+}
+
     //   Function that appends data to text file
     function appendToFile(value){
     fs.appendFile("log.txt","\n"+value,function(err){
