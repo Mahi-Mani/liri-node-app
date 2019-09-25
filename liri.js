@@ -55,14 +55,14 @@ if(movieName){
     }
     // If user did not enter any value then give information about Mr. Nobody
     else if((!movieName) && (process.argv[2] === "movie-this")){
-        console.log("Since you have not entered a movie name, we give you details about Mr. Nobody!");
+        console.log("Since you have not entered a movie name, we give you details about Mr. Nobody!\n");
         queryUrlMovie = "http://www.omdbapi.com/?t=Mr.Nobody&y=&plot=short&apikey=trilogy";
     }
 
     axios.get(queryUrlMovie).then(
         function(response) {
                 var appendMovieArr = [];
-                appendMovieArr.push("*************************MOVIE DETAILS***********************************");
+                appendMovieArr.push("************************* MOVIE DETAILS ***********************************");
                 // Response from query URL is recorded to console.log
             console.log("Title of the movie : " + response.data.Title);
             // Pushing console logged data to an empty array
@@ -120,7 +120,7 @@ if(process.argv[2] === "concert-this"){
     axios.get(queryUrlConcert).then(
         function(response) {
                 var appendConcertArr = [];
-                appendConcertArr.push("***********************CONCERT DETAILS*************************************");
+                appendConcertArr.push("*********************** CONCERT DETAILS *************************************");
                 // Response from query URL is recorded to console.log
             // console.log(response.data.venue.name);
             console.log("Venue : " + response.data[0].venue.name);
@@ -148,19 +148,27 @@ if(process.argv[2] === "spotify-this-song"){
     for(var i=3; i<process.argv.length; i++){
         songNameArr.push(process.argv[i]);
         songName = songNameArr.join(" ");
-        spotify(songName);
     }
+        // If user entered a song name
+        if(songName){
+        spotify(songName);
+        }
+        // If user did not enter a song name then do this
+        else{
+            // songName = "The Sign by Ace of Base";
+            console.log("As you have not entered a song name, here we present you with..\n");
+            spotify("The Sign by Ace of Base");
+        } 
 }
 
+// Spotify function to spotify songs when requested
     function spotify(songName){
     spotifyApi.setAccessToken('BQCu-VeF-h0ZRrGNC6iWYGFyMzt_mR0jnVdrnzG6EKkc9XJRL5jSVjlOp8MmbM0P2IpPnK151lMHFfsUjME');
 
-    // If song name was given by user, then display below details
-    if(songName){
     spotifyApi.searchTracks(songName)
     .then(function(data) {
         var appendSongArr = [];
-        appendSongArr.push("*************************SONG DETAILS***********************************");
+        appendSongArr.push("************************* SONG DETAILS ***********************************");
         console.log("Name of Album : ", data.body.tracks.items[0].album.name);
         appendSongArr.push(data.body.tracks.items[0].album.name);
         console.log("Name of Artist : ", data.body.tracks.items[0].album.artists[0].name);
@@ -173,28 +181,6 @@ if(process.argv[2] === "spotify-this-song"){
     }, function(err) {
         console.error(err);
     });
-}
-// If song name was not given by user then give default value ""The Sign" by Ace of Base.""
-else{
-    songName = "The Sign by Ace of Base";
-    spotifyApi.searchTracks(songName)
-    .then(function(data) {
-        var appendSongArr = [];
-        appendSongArr.push("*************************SONG DETAILS***********************************");
-        console.log("Name of Album : ", data.body.tracks.items[0].album.name);
-        appendSongArr.push(data.body.tracks.items[0].album.name);
-        console.log("Name of Artist : ", data.body.tracks.items[0].album.artists[0].name);
-        appendSongArr.push(data.body.tracks.items[0].album.artists[0].name);
-        console.log("Name of Song : ", data.body.tracks.items[0].name);
-        appendSongArr.push(data.body.tracks.items[0].name);
-        console.log("Preview Link : ", data.body.tracks.items[0].external_urls.spotify);
-        appendSongArr.push(data.body.tracks.items[0].external_urls.spotify);
-        appendToFile(appendSongArr.join("\n"));
-    }, function(err) {
-        console.error(err);
-    });
-
-}
 }
 
 // If 3rd argument is "do-what-it-says"
@@ -220,7 +206,7 @@ if(process.argv[2] === "do-what-it-says"){
         if(err){
             console.log(err);
         }
-        console.log("Appended details to Log.txt Successfully");
+        console.log("APPENDED DETAILS TO LOG SUCCESSFULLY !");
     });
 }
 
