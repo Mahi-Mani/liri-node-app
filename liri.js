@@ -5,6 +5,10 @@
 var SpotifyWebApi = require('spotify-web-api-node');
 // File System
 var fs = require("fs");
+// Variable that holds spotify api access token
+var accessToken;
+// Moment npm
+var moment = require("moment");
 
 const spotifyApi = new SpotifyWebApi({
     clientId: '7134a257fe4647d790e880e5b34382c2',
@@ -19,6 +23,7 @@ const spotifyApi = new SpotifyWebApi({
     .then(function(data) {
     //   console.log('The access token expires in ' + data.body['expires_in']);
     //   console.log('The access token is ' + data.body['access_token']);
+    accessToken = data.body['access_token'];
   
       // Save the access token so that it's used in future calls
       spotifyApi.setAccessToken(data.body['access_token']);
@@ -66,8 +71,8 @@ if(movieName){
             appendMovieArr.push(response.data.Year);
             console.log("Imdb Rating : " + response.data.imdbRating);
             appendMovieArr.push(response.data.imdbRating);
-            console.log("Rotten Tomatoes Rating of the movie : " + response.data.imdbRating);
-            appendMovieArr.push(response.data.imdbRating);
+            console.log("Rotten Tomatoes Rating of the movie : " + response.data.Ratings[1].Value);
+            appendMovieArr.push(response.data.Ratings[1].Value);
             console.log("Country where the movie was produced : " + response.data.Country);
             appendMovieArr.push(response.data.Country);
             console.log("Language of the movie : " + response.data.Language);
@@ -123,11 +128,8 @@ if(process.argv[2] === "concert-this"){
             appendConcertArr.push(response.data[0].venue.name);
             console.log("Venue Location : " + response.data[0].venue.city + "\n\t\t" + response.data[0].venue.latitude + "," + response.data[0].venue.longitude);
             appendConcertArr.push(response.data[0].venue.city + "\n\t\t" + response.data[0].venue.latitude + "," + response.data[0].venue.longitude);
-            console.log("Venue : " + response.data[0].datetime);
-            appendConcertArr.push(response.data[0].datetime);
-            // var formattedTime = response.data[0].datetime.moment().format("MM/DD/YYYY");
-            // console.log("Formated Time : " + formattedTime);
-    
+            console.log("Date and Time : " + moment(response.data[0].datetime).format("MM/DD/YYYY"));
+            appendConcertArr.push(moment(response.data[0].datetime).format("MM/DD/YYYY"));
             // Appending the array to log.txt
             appendToFile(appendConcertArr.join("\n"));
 
@@ -146,8 +148,12 @@ if(process.argv[2] === "spotify-this-song"){
     for(var i=3; i<process.argv.length; i++){
         songNameArr.push(process.argv[i]);
         songName = songNameArr.join(" ");
+        spotify(songName);
     }
-    spotifyApi.setAccessToken('BQAmvy3Rnp9JgGWC0lPs9Ezk07P-kuNt6lRQ_2vWli4zStbqTXibC8mp2ir28ZI4UMU3sgDVRD_-vQnB_zY');
+}
+
+    function spotify(songName){
+    spotifyApi.setAccessToken('BQCu-VeF-h0ZRrGNC6iWYGFyMzt_mR0jnVdrnzG6EKkc9XJRL5jSVjlOp8MmbM0P2IpPnK151lMHFfsUjME');
 
     // If song name was given by user, then display below details
     if(songName){
@@ -191,9 +197,21 @@ else{
 }
 }
 
-// Getting song name from user in 3rd argument
+// If 3rd argument is "do-what-it-says"
 if(process.argv[2] === "do-what-it-says"){ 
-    // Using filesystem read file
+    // Using filesystem read file random.txt
+    fs.readFile("random.txt","utf8",function(err, data){
+        if(err){
+            console.log(err);
+        }
+        // Split contents of file using a comma
+        var dataArr = data.split(",");
+        process.argv[2] = dataArr[0];
+        songName = dataArr[1];
+        // Assigning the name of song from file to songName
+        spotify(songName);
+
+    });
 }
 
     //   Function that appends data to text file
