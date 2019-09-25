@@ -206,7 +206,7 @@ if(process.argv[2] === "do-what-it-says"){
         if(err){
             console.log(err);
         }
-        console.log("APPENDED DETAILS TO LOG SUCCESSFULLY !");
+        console.log("\nAPPENDED DETAILS TO LOG SUCCESSFULLY !");
     });
 }
 
