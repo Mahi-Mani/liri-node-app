@@ -48,7 +48,7 @@ far as this code is concerned, utilised filesystem, axios, moment, spotify api.
 ### Output - Gives name of album, artist, song and preview link of song in spotify of "I want it that way" since that song name was specified in random.txt. Code reads random.txt file and outputs the song name that was read from text file. Output is logged in log.txt file as well.
 ![Site](gif/doWhatItSays.gif)
 ## logAfterDoItThatWay.png :
-### All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after concert output.
+### All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after movie output.
 ![Site](logImages/logAfterDoItThatWay.jpg)
 
 
