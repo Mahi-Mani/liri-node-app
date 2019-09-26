@@ -191,8 +191,8 @@ if(process.argv[2] === "do-what-it-says"){
         // Split contents of file using a comma
         var dataArr = data.split(",");
         process.argv[2] = dataArr[0];
-        songName = dataArr[1];
         // Assigning the name of song from file to songName
+        songName = dataArr[1];
         spotify(songName);
 
     });
