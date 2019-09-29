@@ -7,11 +7,11 @@ far as this code is concerned, utilised filesystem, axios, moment, spotify api.
 - Axios : used to call api and extract datas from them.
 
 ## Summary
-### LIRI Application. Language Interpretation and Recognition Interface.
+## LIRI Application. Language Interpretation and Recognition Interface.
 
 ## Site pictures and explanation
 ## Spotify.gif :
-### Command1 - node liri.js spotify-this-song losing you
+`node liri.js spotify-this-song losing you`
 ### Output - Gives name of album, artist, song and preview link of song in spotify. Output is logged in log.txt file as well.
 
 ### Command2 - node liri.js spotify-this-song Stay
