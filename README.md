@@ -24,10 +24,10 @@ Output is logged in log.txt file as well.
 
 ```Output - Since user did not give any input song to log, default value of "The Sign by Ace of Base" song details are displayed. Output is logged in log.txt file as well.```
 ![Site](gif/spotify.gif)
-## logAfterSpotify.png :
+- logAfterSpotify.png :
 ### All commands' output is logged to log.txt file and the screenshot of it is added below.
 ![Site](logImages/logAfterSpotify.png)
-## Concert.gif :
+- Concert.gif :
 `node liri.js concert-this Built to Spill`
 
 ```Output - Gives Venue, venue location, Date and Time in customized format(MM/DD/YYYY). Output is logged in log.txt file as well.```
@@ -36,7 +36,7 @@ Output is logged in log.txt file as well.
 
 ```Output - Since user did not give any input, it reminds the user to enter either band/artist name to proceed further. This time, output is not logged as user did not provide an input```
 ![Site](gif/concert.gif)
-## logAfterConcert.png :
+- logAfterConcert.png :
 ### All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after spotify output.
 ![Site](logImages/logAfterConcert.png)
 - Movie.gif :
@@ -48,7 +48,7 @@ Output is logged in log.txt file as well.
 
 ```Output - Since user did not give any input, it gives details about the default value "Mr. Nobody". The outpu is logged to log.txt file as well```
 ![Site](gif/movie.gif)
-## logAfterMovie.png :
+- logAfterMovie.png :
 ### All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after concert output.
 ![Site](logImages/logAfterMovie.jpg)
 - DoWhatItSays.gif :
@@ -56,7 +56,7 @@ Output is logged in log.txt file as well.
 
 ```Output - Gives name of album, artist, song and preview link of song in spotify of "I want it that way" since that song name was specified in random.txt. Code reads random.txt file and outputs the song name that was read from text file. Output is logged in log.txt file as well.```
 ![Site](gif/doWhatItSays.gif)
-## logAfterDoItThatWay.png :
+- logAfterDoItThatWay.png :
 ### All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after movie output.
 ![Site](logImages/logAfterDoItThatWay.jpg)
 
