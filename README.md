@@ -41,14 +41,16 @@ Output is logged in log.txt file as well.
 ### Output - Gives title of movie, release year, Imdb rating, rotten tomatoes rating, country where the movie was produced, language, plot and actors in the movie. Output is logged in log.txt file as well.
 
 `node liri.js movie-this`
-### Output - Since user did not give any input, it gives details about the default value "Mr. Nobody". The outpu is logged to log.txt file as well
+
+```Output - Since user did not give any input, it gives details about the default value "Mr. Nobody". The outpu is logged to log.txt file as well```
 ![Site](gif/movie.gif)
 ## logAfterMovie.png :
 ### All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after concert output.
 ![Site](logImages/logAfterMovie.jpg)
 ## DoWhatItSays.gif :
 `node liri.js do-what-it-says`
-### Output - Gives name of album, artist, song and preview link of song in spotify of "I want it that way" since that song name was specified in random.txt. Code reads random.txt file and outputs the song name that was read from text file. Output is logged in log.txt file as well.
+
+```Output - Gives name of album, artist, song and preview link of song in spotify of "I want it that way" since that song name was specified in random.txt. Code reads random.txt file and outputs the song name that was read from text file. Output is logged in log.txt file as well.```
 ![Site](gif/doWhatItSays.gif)
 ## logAfterDoItThatWay.png :
 ### All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after movie output.
