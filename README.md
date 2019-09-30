@@ -10,7 +10,7 @@ far as this code is concerned, utilised filesystem, axios, moment, spotify api.
 ## LIRI Application. Language Interpretation and Recognition Interface.
 
 ## Site pictures and explanation
-- Spotify.gif :
+* Spotify.gif :
 
 `node liri.js spotify-this-song losing you`
 
@@ -34,12 +34,12 @@ song details are displayed.
 Output is logged in log.txt file as well.
 ```
 ![Site](gif/spotify.gif)
-- logAfterSpotify.png :
+* logAfterSpotify.png :
 
 All commands' output is logged to log.txt file and the screenshot of it is added below.
 
 ![Site](logImages/logAfterSpotify.png)
-- Concert.gif :
+* Concert.gif :
 
 `node liri.js concert-this Built to Spill`
 
@@ -55,12 +55,12 @@ Output - Since user did not give any input, it reminds the user to enter either 
 This time, output is not logged as user did not provide an input.
 ```
 ![Site](gif/concert.gif)
-- logAfterConcert.png :
+* logAfterConcert.png :
 
 All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after spotify output.
 
 ![Site](logImages/logAfterConcert.png)
-- Movie.gif :
+* Movie.gif :
 `node liri.js movie-this star wars`
 
 ```
@@ -76,12 +76,12 @@ The output is logged to log.txt file as well.
 ```
 
 ![Site](gif/movie.gif)
-- logAfterMovie.png :
+* logAfterMovie.png :
  
 All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after concert output.
 
 ![Site](logImages/logAfterMovie.jpg)
-- DoWhatItSays.gif :
+* DoWhatItSays.gif :
 `node liri.js do-what-it-says`
 
 ```
@@ -91,7 +91,7 @@ song name that was read from text file.
 Output is logged in log.txt file as well.
 ```
 ![Site](gif/doWhatItSays.gif)
-- logAfterDoItThatWay.png :
+* logAfterDoItThatWay.png :
 
 All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after movie output.
 
