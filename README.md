@@ -11,6 +11,7 @@ far as this code is concerned, utilised filesystem, axios, moment, spotify api.
 
 ## Site pictures and explanation
 - Spotify.gif :
+
 `node liri.js spotify-this-song losing you`
 
 ```
@@ -39,6 +40,7 @@ All commands' output is logged to log.txt file and the screenshot of it is added
 
 ![Site](logImages/logAfterSpotify.png)
 - Concert.gif :
+
 `node liri.js concert-this Built to Spill`
 
 ```
