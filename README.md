@@ -53,6 +53,7 @@ All commands' output is logged to log.txt file and the screenshot of it is added
 
 ![Site](logImages/logAfterConcert.png)
 * Movie.gif :
+
 `node liri.js movie-this star wars`
 
 >The above code gives title of movie, release year, Imdb rating, rotten tomatoes rating, country where the movie was produced, language, plot and actors in the movie. Output is logged in log.txt file as well.
@@ -69,6 +70,7 @@ All commands' output is logged to log.txt file and the screenshot of it is added
 
 ![Site](logImages/logAfterMovie.jpg)
 * DoWhatItSays.gif :
+
 `node liri.js do-what-it-says`
 
 >The above code gives name of album, artist, song and preview link of song in spotify of "I want it that way" 
