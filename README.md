@@ -36,9 +36,6 @@ song details are displayed. Output is logged in log.txt file as well.
 
 ![Site](gif/spotify.gif)
 
-All commands' output is logged to log.txt file and the screenshot of it is added below.
-
-![Site](logImages/logAfterSpotify.png)
 2. Bands in Town API :
 
 `node liri.js concert-this Built to Spill`
@@ -53,9 +50,6 @@ This time, output is not logged as user did not provide an input.
 
 ![Site](gif/concert.gif)
 
-All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after spotify output.
-
-![Site](logImages/logAfterConcert.png)
 3. OMDb API :
 
 `node liri.js movie-this star wars`
@@ -69,9 +63,6 @@ The output is logged to log.txt file as well.
 
 ![Site](gif/movie.gif)
  
-All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after concert output.
-
-![Site](logImages/logAfterMovie.jpg)
 4. Spotify API using filesystem
 
 `node liri.js do-what-it-says`
@@ -82,7 +73,16 @@ song name that was read from text file. Output is logged in log.txt file as well
 
 ![Site](gif/doWhatItSays.gif)
 
-All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after movie output.
+
+## Logs
+
+All outputs are logged to log.txt file. Results of each command is appended to file to keep track of results.
+
+![Site](logImages/logAfterSpotify.png)
+
+![Site](logImages/logAfterConcert.png)
+
+![Site](logImages/logAfterMovie.jpg)
 
 ![Site](logImages/logAfterDoItThatWay.jpg)
 
