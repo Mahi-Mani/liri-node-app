@@ -1,19 +1,25 @@
 # liri-node-app
 
+## Summary
+   LIRI Application - Language Interpretation and Recognition Interface. LIRI is a command line node application that takes in parameters and gives you back data. User needs to install axios, moment and spotify web api node to use this application. User has to add user's spotify api key to access spotify songs. 
+   
+## Installation Guide
+* User has to download all files from github.
+* User can either clone the repository or download all files manually.
+* Package.json file has required depencies to be installed. So, user can type `npm install` to install all needed packages
+* User can type `node liri.js` to run the application
+* To access different API's results, follow steps from results section
+
 ## Technologies Used
 - Javascript : used to provide interactive effects
 - Node : used to run javascript file outside the browser. Supports command line user input. Node is useful is different ways. As
 far as this code is concerned, utilised filesystem, axios, moment, spotify api.
 - Axios : used to call api and extract datas from them.
 
-
 ## APIs Used
 - Spotify API
 - Bands in Town API
 - OMDb API
-
-## Summary
-   LIRI Application - Language Interpretation and Recognition Interface. LIRI is a command line node application that takes in parameters and gives you back data. User needs to install axios, moment and spotify web api node to use this application. User has to add user's spotify api key to access spotify songs.  
 
 ## Results
 1. Spotify API :
@@ -123,7 +129,7 @@ All outputs are logged to log.txt file. Results of each command is appended to f
         });
     }
 ```
-Published this above code snippet as this code snippet implements multiple instances of liri node application. Used filesystem npm to append the details to log file. Also, used filesystem to read a command from text file and produce results.
+The above code implements multiple instances of liri node application. Used filesystem npm to append the details to log file. Also, used filesystem to read a command from text file and produce results.
 
 ## Author Links
 [LinkedIn](https://www.linkedin.com/in/mahisha-gunasekaran-0a780a88/)
