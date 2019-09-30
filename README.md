@@ -15,21 +15,19 @@ far as this code is concerned, utilised filesystem, axios, moment, spotify api.
 `node liri.js spotify-this-song losing you`
 
 
->Output : Gives name of album, artist, song and preview link of song in spotify. 
+>The above code gives name of album, artist, song and preview link of song in spotify. 
 Output is logged in log.txt file as well.
 
 `node liri.js spotify-this-song Stay`
 
->Output - Gives name of album, artist, song and preview link of song in spotify. 
+>The above code gives name of album, artist, song and preview link of song in spotify. 
 Output is logged in log.txt file as well.
 
 `node liri.js spotify-this-song`
 
-```
-Output - Since user did not give any input song to log, default value of "The Sign by Ace of Base" 
-song details are displayed. 
-Output is logged in log.txt file as well.
-```
+>Since user did not give any input song to log, default value of "The Sign by Ace of Base" 
+song details are displayed. Output is logged in log.txt file as well.
+
 ![Site](gif/spotify.gif)
 * logAfterSpotify.png :
 
@@ -40,17 +38,14 @@ All commands' output is logged to log.txt file and the screenshot of it is added
 
 `node liri.js concert-this Built to Spill`
 
-```
-Output - Gives Venue, venue location, Date and Time in customized format(MM/DD/YYYY). 
+>The above code gives Venue, venue location, Date and Time in customized format(MM/DD/YYYY). 
 Output is logged in log.txt file as well.
-```
 
 `node liri.js concert-this`
 
-```
-Output - Since user did not give any input, it reminds the user to enter either band/artist name to proceed further. 
+>Since user did not give any input, it reminds the user to enter either band/artist name to proceed further. 
 This time, output is not logged as user did not provide an input.
-```
+
 ![Site](gif/concert.gif)
 * logAfterConcert.png :
 
@@ -60,17 +55,12 @@ All commands' output is logged to log.txt file and the screenshot of it is added
 * Movie.gif :
 `node liri.js movie-this star wars`
 
-```
-Output - Gives title of movie, release year, Imdb rating, rotten tomatoes rating, country where the movie was produced, language, plot and actors in the movie. 
-Output is logged in log.txt file as well.
-```
+>The above code gives title of movie, release year, Imdb rating, rotten tomatoes rating, country where the movie was produced, language, plot and actors in the movie. Output is logged in log.txt file as well.
 
 `node liri.js movie-this`
 
-```
-Output - Since user did not give any input, it gives details about the default value "Mr. Nobody". 
+>Since user did not give any input, it gives details about the default value "Mr. Nobody". 
 The output is logged to log.txt file as well.
-```
 
 ![Site](gif/movie.gif)
 * logAfterMovie.png :
@@ -81,12 +71,10 @@ All commands' output is logged to log.txt file and the screenshot of it is added
 * DoWhatItSays.gif :
 `node liri.js do-what-it-says`
 
-```
-Output - Gives name of album, artist, song and preview link of song in spotify of "I want it that way" 
+>The above code gives name of album, artist, song and preview link of song in spotify of "I want it that way" 
 since that song name was specified in random.txt. Code reads random.txt file and outputs the 
-song name that was read from text file. 
-Output is logged in log.txt file as well.
-```
+song name that was read from text file. Output is logged in log.txt file as well.
+
 ![Site](gif/doWhatItSays.gif)
 * logAfterDoItThatWay.png :
 
