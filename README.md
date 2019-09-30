@@ -132,7 +132,7 @@ All outputs are logged to log.txt file. Results of each command is appended to f
 The above code implements multiple instances of liri node application. Used filesystem npm to append the details to log file. Also, used filesystem to read a command from text file and produce results.
 
 ## Learning Points
-* Cracking down the spotify API was quite challenging as it required a token-key as well. After a lot of documentation research, found the
+* Cracking down the spotify API was quite challenging as it required a token-key. After a lot of documentation research, found the
 below code snippet, to get access token so that one can access the API
 
 ```Javascript
