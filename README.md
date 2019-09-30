@@ -12,6 +12,7 @@ far as this code is concerned, utilised filesystem, axios, moment, spotify api.
 ## Site pictures and explanation
 - Spotify.gif :
 `node liri.js spotify-this-song losing you`
+
 ```
 Output : Gives name of album, artist, song and preview link of song in spotify. 
 Output is logged in log.txt file as well.
@@ -27,7 +28,9 @@ Output is logged in log.txt file as well.
 `node liri.js spotify-this-song`
 
 ```
-Output - Since user did not give any input song to log, default value of "The Sign by Ace of Base" song details are displayed. Output is logged in log.txt file as well.
+Output - Since user did not give any input song to log, default value of "The Sign by Ace of Base" 
+song details are displayed. 
+Output is logged in log.txt file as well.
 ```
 ![Site](gif/spotify.gif)
 - logAfterSpotify.png :
@@ -80,7 +83,10 @@ All commands' output is logged to log.txt file and the screenshot of it is added
 `node liri.js do-what-it-says`
 
 ```
-Output - Gives name of album, artist, song and preview link of song in spotify of "I want it that way" since that song name was specified in random.txt. Code reads random.txt file and outputs the song name that was read from text file. Output is logged in log.txt file as well.
+Output - Gives name of album, artist, song and preview link of song in spotify of "I want it that way" 
+since that song name was specified in random.txt. Code reads random.txt file and outputs the 
+song name that was read from text file. 
+Output is logged in log.txt file as well.
 ```
 ![Site](gif/doWhatItSays.gif)
 - logAfterDoItThatWay.png :
