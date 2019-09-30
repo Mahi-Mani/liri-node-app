@@ -9,8 +9,8 @@ far as this code is concerned, utilised filesystem, axios, moment, spotify api.
 ## Summary
    LIRI Application - Language Interpretation and Recognition Interface. LIRI is a command line node application that takes in parameters and gives you back data. User needs to install axios, moment and spotify web api node to use this application. User has to add user's spotify api key to access spotify songs.  
 
-## Site pictures and explanation
-* Spotify.gif :
+## Results
+1. Spotify API :
 
 `node liri.js spotify-this-song losing you`
 
@@ -29,12 +29,11 @@ Output is logged in log.txt file as well.
 song details are displayed. Output is logged in log.txt file as well.
 
 ![Site](gif/spotify.gif)
-* logAfterSpotify.png :
 
 All commands' output is logged to log.txt file and the screenshot of it is added below.
 
 ![Site](logImages/logAfterSpotify.png)
-* Concert.gif :
+2. Bands in Town API :
 
 `node liri.js concert-this Built to Spill`
 
@@ -47,12 +46,11 @@ Output is logged in log.txt file as well.
 This time, output is not logged as user did not provide an input.
 
 ![Site](gif/concert.gif)
-* logAfterConcert.png :
 
 All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after spotify output.
 
 ![Site](logImages/logAfterConcert.png)
-* Movie.gif :
+3. OMDb API :
 
 `node liri.js movie-this star wars`
 
@@ -64,12 +62,11 @@ All commands' output is logged to log.txt file and the screenshot of it is added
 The output is logged to log.txt file as well.
 
 ![Site](gif/movie.gif)
-* logAfterMovie.png :
  
 All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after concert output.
 
 ![Site](logImages/logAfterMovie.jpg)
-* DoWhatItSays.gif :
+4. Spotify API using filesystem
 
 `node liri.js do-what-it-says`
 
@@ -78,13 +75,10 @@ since that song name was specified in random.txt. Code reads random.txt file and
 song name that was read from text file. Output is logged in log.txt file as well.
 
 ![Site](gif/doWhatItSays.gif)
-* logAfterDoItThatWay.png :
 
 All commands' output is logged to log.txt file and the screenshot of it is added below. We can see the values are appended to file after movie output.
 
 ![Site](logImages/logAfterDoItThatWay.jpg)
-
-
 
 ## Code Snippet
 ```Javascript
