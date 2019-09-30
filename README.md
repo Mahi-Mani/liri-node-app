@@ -123,7 +123,7 @@ All commands' output is logged to log.txt file and the screenshot of it is added
         });
     }
 ```
-
+Published this above code snippet as this code snippet implements multiple instances of liri node application. Used filesystem npm to append the details to log file. Also, used filesystem to read a command from text file and produce results.
 
 ## Author Links
 [LinkedIn](https://www.linkedin.com/in/mahisha-gunasekaran-0a780a88/)
