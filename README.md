@@ -7,7 +7,7 @@ far as this code is concerned, utilised filesystem, axios, moment, spotify api.
 - Axios : used to call api and extract datas from them.
 
 ## Summary
-## LIRI Application. Language Interpretation and Recognition Interface.
+   LIRI Application - Language Interpretation and Recognition Interface. LIRI is a command line node application that takes in parameters and gives you back data. User needs to install axios, moment and spotify web api node to use this application. User has to add user's spotify api key to access spotify songs.  
 
 ## Site pictures and explanation
 * Spotify.gif :
