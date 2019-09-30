@@ -131,6 +131,27 @@ All outputs are logged to log.txt file. Results of each command is appended to f
 ```
 The above code implements multiple instances of liri node application. Used filesystem npm to append the details to log file. Also, used filesystem to read a command from text file and produce results.
 
+## Learning Points
+* Cracking down the spotify API was quite challenging as it required a token-key as well. After a lot of documentation research, found the
+below code snippet, to get access token so that one can access the API
+
+```Javascript
+  // Set an access token.
+  // This is required as Spotify implemented a new auth flow since May 2017.
+  // See https://developer.spotify.com/news-stories/2017/01/27/removing-unauthenticated-calls-to-the-web-api/
+  spotifyApi.clientCredentialsGrant()
+    .then(function(data) {
+      console.log('The access token expires in ' + data.body['expires_in']);
+      console.log('The access token is ' + data.body['access_token']);
+    accessToken = data.body['access_token'];
+  
+      // Save the access token so that it's used in future calls
+      spotifyApi.setAccessToken(data.body['access_token']);
+    }, function(err) {
+      console.log('Something went wrong when retrieving an access token', err.message);
+    });
+ ```
+
 ## Author Links
 [LinkedIn](https://www.linkedin.com/in/mahisha-gunasekaran-0a780a88/)
 
