@@ -14,10 +14,9 @@ far as this code is concerned, utilised filesystem, axios, moment, spotify api.
 
 `node liri.js spotify-this-song losing you`
 
-```
-Output : Gives name of album, artist, song and preview link of song in spotify. 
-Output is logged in log.txt file as well.
-```
+
+>Output : Gives name of album, artist, song and preview link of song in spotify. 
+Output is logged in log.txt file as well.>
 
 `node liri.js spotify-this-song Stay`
 
